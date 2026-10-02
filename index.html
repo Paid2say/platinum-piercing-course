@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Piercing Education — Platinum Tattoos & Piercings</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:      #1a1a1a;
+      --smoke:    #3d3d3d;
+      --gold:     #c9973a;
+      --gold-lt:  #e8c26a;
+      --cream:    #faf8f4;
+      --rule:     #ddd;
+      --tag-bg:   #f0ece4;
+      --red:      #9b2335;
+      --teal:     #1a4a4a;
+    }
+
+    html { font-size: 11pt; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', Georgia, serif;
+      color: var(--ink);
+      background: #e0ddd8;
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      overflow-x: auto;
+    }
+    .site-nav .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      padding: 0.75rem 1.5rem 0.75rem 0;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .site-nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+    .site-nav a:hover { color: var(--gold); }
+
+    /* ─── PAGE ─── */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      margin: 0.5in auto;
+      padding: 0.75in 0.85in;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.2);
+      position: relative;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: avoid; }
+
+    /* ─── COVER ─── */
+    .cover {
+      background: var(--ink);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 11in;
+      padding: 1.2in 1in;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 4in;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gold) 0%, #5a3a10 100%);
+      clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+      opacity: 0.12;
+    }
+    .cover-eyebrow {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3in;
+    }
+    .cover-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 96pt;
+      line-height: 0.85;
+      color: white;
+      margin-bottom: 0.12in;
+    }
+    .cover-subtitle {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 38pt;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5in;
+    }
+    .cover-divider {
+      width: 0.7in;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 0.4in;
+    }
+    .cover-meta {
+      font-size: 10pt;
+      color: rgba(255,255,255,0.65);
+      line-height: 2;
+    }
+    .cover-meta strong { color: white; }
+    .cover-badge {
+      position: absolute;
+      bottom: 1in;
+      right: 1in;
+      text-align: right;
+    }
+    .cover-badge .badge-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14pt;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+    }
+    .cover-badge .badge-sub {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── TOC ─── */
+    .toc-page { background: var(--cream); }
+    .toc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42pt;
+      color: var(--ink);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 0.15in;
+      margin-bottom: 0.4in;
+      letter-spacing: 0.05em;
+    }
+    .toc-entry {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.18in 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .toc-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18pt;
+      color: var(--gold);
+      min-width: 0.5in;
+    }
+    .toc-name {
+      font-weight: 600;
+      font-size: 12pt;
+      flex: 1;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .toc-name:hover { color: var(--gold); }
+    .toc-dots {
+      flex: 1;
+      border-bottom: 1.5px dotted #ccc;
+      margin: 0 0.2in;
+    }
+    .toc-topic {
+      font-size: 9pt;
+      color: var(--smoke);
+      margin-left: 0.5in;
+      padding-top: 0.05in;
+    }
+
+    /* ─── PAGE HEADER / FOOTER ─── */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.12in;
+      margin-bottom: 0.4in;
+      font-size: 7.5pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--smoke);
+    }
+    .page-header .brand { font-weight: 700; color: var(--ink); }
+    .page-footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 0.1in;
+      margin-top: 0.5in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #aaa;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── MODULE HEADER ─── */
+    .module-header {
+      background: var(--ink);
+      color: white;
+      margin: -0.75in -0.85in 0.5in;
+      padding: 0.5in 0.85in 0.4in;
+      position: relative;
+      overflow: hidden;
+    }
+    .module-header::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0;
+      width: 2.5in; height: 100%;
+      background: linear-gradient(135deg, var(--gold), transparent);
+      opacity: 0.1;
+      clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .module-eyebrow {
+      font-size: 7.5pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.1in;
+    }
+    .module-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40pt;
+      line-height: 1;
+      color: white;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── SECTION HEADINGS ─── */
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22pt;
+      color: var(--ink);
+      border-left: 4px solid var(--gold);
+      padding-left: 0.2in;
+      margin: 0.4in 0 0.2in;
+      letter-spacing: 0.04em;
+    }
+    h3 {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--smoke);
+      margin: 0.3in 0 0.1in;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--rule);
+    }
+    h4 {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0.2in 0 0.05in;
+    }
+    p { margin-bottom: 0.12in; }
+    ul, ol { margin: 0.1in 0 0.15in 1.2em; }
+    li { margin-bottom: 0.06in; }
+    strong { color: var(--ink); }
+
+    /* ─── CALLOUT BOXES ─── */
+    .callout {
+      border-left: 4px solid var(--gold);
+      background: var(--tag-bg);
+      padding: 0.2in 0.25in;
+      margin: 0.25in 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout.danger {
+      border-left-color: var(--red);
+      background: #fdf0f0;
+    }
+    .callout.info {
+      border-left-color: var(--teal);
+      background: #f0f6f6;
+    }
+    .callout-label {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.06in;
+    }
+    .callout.danger .callout-label { color: var(--red); }
+    .callout.info .callout-label { color: var(--teal); }
+
+    /* ─── TABLE ─── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.2in 0;
+      font-size: 9.5pt;
+    }
+    th {
+      background: var(--ink);
+      color: white;
+      padding: 0.1in 0.15in;
+      text-align: left;
+      font-size: 8pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    td {
+      padding: 0.08in 0.15in;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: var(--cream); }
+
+    /* ─── IMAGE PLACEHOLDER ─── */
+    .img-placeholder {
+      border: 2.5px dashed var(--gold);
+      background: #fdf9f1;
+      border-radius: 6px;
+      padding: 0.4in 0.3in;
+      text-align: center;
+      margin: 0.3in 0;
+      position: relative;
+    }
+    .img-placeholder .img-icon {
+      font-size: 28pt;
+      margin-bottom: 0.1in;
+      opacity: 0.4;
+    }
+    .img-placeholder .img-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14pt;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.06in;
+    }
+    .img-placeholder .img-hint {
+      font-size: 8pt;
+      color: #999;
+      letter-spacing: 0.05em;
+    }
+    .img-placeholder-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.2in;
+    }
+
+    /* ─── OBJECTIVES ─── */
+    .objectives {
+      background: var(--ink);
+      color: white;
+      padding: 0.25in 0.3in;
+      border-radius: 4px;
+      margin: 0.2in 0 0.35in;
+    }
+    .objectives-label {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.12in;
+    }
+    .objectives ol {
+      margin-left: 1.2em;
+      color: rgba(255,255,255,0.88);
+      font-size: 10pt;
+      line-height: 1.7;
+    }
+
+    /* ─── OUTLINE ─── */
+    .outline {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.2in 0.25in;
+      margin: 0.2in 0;
+    }
+    .outline-label {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--smoke);
+      margin-bottom: 0.1in;
+    }
+    .outline-row {
+      display: flex;
+      gap: 0.2in;
+      font-size: 9.5pt;
+      padding: 0.04in 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .outline-row:last-child { border-bottom: none; }
+    .outline-time {
+      font-weight: 700;
+      color: var(--gold);
+      min-width: 1.2in;
+      font-size: 9pt;
+    }
+
+    /* ─── QUIZ ─── */
+    .quiz-section {
+      background: var(--ink);
+      color: white;
+      padding: 0.3in 0.35in;
+      border-radius: 4px;
+      margin: 0.35in 0;
+    }
+    .quiz-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20pt;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2in;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 0.1in;
+    }
+    .quiz-q {
+      margin-bottom: 0.25in;
+    }
+    .quiz-q .q-text {
+      font-weight: 600;
+      margin-bottom: 0.08in;
+      font-size: 10pt;
+    }
+    .quiz-q .q-options {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .quiz-q .q-options li {
+      padding: 0.03in 0.1in;
+      font-size: 9.5pt;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 0.03in;
+    }
+    .quiz-q .q-options li.correct {
+      color: #7dcea0;
+      font-weight: 700;
+    }
+    .quiz-q .q-options li.correct::before { content: '✓ '; }
+
+    /* ─── TAKEAWAYS ─── */
+    .takeaways {
+      background: linear-gradient(135deg, var(--gold) 0%, #8a5e1a 100%);
+      color: white;
+      padding: 0.25in 0.3in;
+      border-radius: 4px;
+      margin: 0.3in 0;
+    }
+    .takeaways-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16pt;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.12in;
+      color: white;
+    }
+    .takeaways ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .takeaways ul li {
+      padding: 0.04in 0;
+      font-size: 10pt;
+      font-weight: 500;
+      margin-bottom: 0.04in;
+    }
+    .takeaways ul li::before {
+      content: '▸ ';
+      font-weight: 700;
+    }
+
+    /* ─── NOTES LINES ─── */
+    .notes-section {
+      margin-top: 0.4in;
+      padding-top: 0.2in;
+      border-top: 2px solid var(--ink);
+    }
+    .notes-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16pt;
+      letter-spacing: 0.1em;
+      color: var(--smoke);
+      margin-bottom: 0.15in;
+    }
+    .notes-line {
+      border-bottom: 1px solid #ccc;
+      height: 0.35in;
+      margin-bottom: 0.04in;
+    }
+
+    /* ─── QA PROMPTS ─── */
+    .qa-section {
+      background: var(--tag-bg);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.25in 0.3in;
+      margin: 0.3in 0;
+    }
+    .qa-label {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--smoke);
+      margin-bottom: 0.12in;
+    }
+    .qa-section ol {
+      font-size: 10pt;
+      line-height: 1.7;
+    }
+
+    /* ─── SECTION DIVIDER ─── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.15in;
+      margin: 0.4in 0;
+    }
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .section-divider span {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #bbb;
+      white-space: nowrap;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      .site-nav { display: none; }
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; width: 100%; }
+      .module-header { margin: 0 0 0.5in; }
+      .img-placeholder { break-inside: avoid; }
+      .quiz-section, .takeaways { break-inside: avoid; }
+    }
+
+    @media (max-width: 900px) {
+      .page { width: 100%; margin: 0; padding: 1.5rem; }
+      .cover { min-height: auto; padding: 2rem 1.5rem; }
+      .cover-title { font-size: 52pt; }
+      .img-placeholder-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="site-nav">
+  <div class="brand">Platinum Education</div>
+  <a href="#cover">Home</a>
+  <a href="#toc">Contents</a>
+  <a href="#module1">Module 1 — BBP</a>
+  <a href="#module2">Module 2 — Anatomy</a>
+  <a href="#module3">Module 3 — Aseptic</a>
+</nav>
+
+
+<!-- ════════════════════════════════════════
+     COVER
+═══════════════════════════════════════════ -->
+<div class="page cover" id="cover">
+  <div class="cover-eyebrow">Platinum Tattoos &amp; Piercings &nbsp;·&nbsp; Professional Education Series</div>
+  <div class="cover-title">Professional<br>Piercing</div>
+  <div class="cover-subtitle">Education Guide</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <strong>Modules 1–3</strong><br>
+    Bloodborne Pathogens &nbsp;·&nbsp; Anatomy &amp; Physiology &nbsp;·&nbsp; Aseptic Technique<br><br>
+    <strong>Platinum Tattoos &amp; Piercings</strong><br>
+    5545 NW Loop 410 &nbsp;·&nbsp; San Antonio, TX 78238
+  </div>
+  <div class="cover-badge">
+    <div class="badge-label">© 2026</div>
+    <div class="badge-sub">All rights reserved</div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     TABLE OF CONTENTS
+═══════════════════════════════════════════ -->
+<div class="page toc-page" id="toc">
+  <div class="page-header">
+    <span class="brand">Platinum Tattoos &amp; Piercings</span>
+    <span>Professional Piercing Education Series</span>
+  </div>
+
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-entry">
+    <div class="toc-num">01</div>
+    <a class="toc-name" href="#module1">Bloodborne Pathogens, First Aid &amp; CPR</a>
+    <div class="toc-dots"></div>
+  </div>
+  <div class="toc-topic">HIV · Hepatitis B &amp; C · Standard Precautions · Exposure Response · First Aid Emergencies · CPR</div>
+
+  <div class="toc-entry">
+    <div class="toc-num">02</div>
+    <a class="toc-name" href="#module2">Anatomy &amp; Physiology for Piercers</a>
+    <div class="toc-dots"></div>
+  </div>
+  <div class="toc-topic">Skin Layers · Soft Tissue vs. Cartilage · Blood Vessels · Nerve Supply · Wound Healing Phases · Safe Placement</div>
+
+  <div class="toc-entry">
+    <div class="toc-num">03</div>
+    <a class="toc-name" href="#module3">Aseptic Technique</a>
+    <div class="toc-dots"></div>
+  </div>
+  <div class="toc-topic">Handwashing · Glove Use · Skin Prep · Cross-Contamination Prevention · Sharps Handling &amp; Disposal</div>
+
+  <div style="margin-top:0.5in; padding-top:0.3in; border-top:2px solid var(--rule);">
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Studio photo, team photo, or course intro image</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Platinum Tattoos &amp; Piercings</span>
+    <span>Professional Piercing Education Series &nbsp;·&nbsp; © 2026</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     MODULE 1 — BLOODBORNE PATHOGENS
+═══════════════════════════════════════════ -->
+<div class="page" id="module1">
+  <div class="module-header">
+    <div class="module-eyebrow">Module 01 &nbsp;·&nbsp; 45 Minutes</div>
+    <div class="module-title">Bloodborne Pathogens,<br>First Aid &amp; CPR</div>
+  </div>
+
+  <div class="objectives">
+    <div class="objectives-label">Learning Objectives</div>
+    <ol>
+      <li>Identify the major bloodborne pathogens relevant to the piercing environment and explain how transmission occurs</li>
+      <li>Describe and implement standard precautions to prevent exposure during piercing procedures</li>
+      <li>Demonstrate proper response protocol following a needlestick or blood exposure incident</li>
+      <li>Recognize first aid emergencies that can occur in a piercing studio and respond appropriately</li>
+      <li>Understand when and how CPR applies and why certification is non-negotiable</li>
+    </ol>
+  </div>
+
+  <div class="outline">
+    <div class="outline-label">Lesson Outline</div>
+    <div class="outline-row"><span class="outline-time">0:00 – 3:00</span> Welcome, why this module exists, legal requirements</div>
+    <div class="outline-row"><span class="outline-time">3:00 – 15:00</span> Bloodborne Pathogens: The Big Three + transmission</div>
+    <div class="outline-row"><span class="outline-time">15:00 – 22:00</span> Standard Precautions &amp; exposure response</div>
+    <div class="outline-row"><span class="outline-time">22:00 – 32:00</span> First Aid in the studio</div>
+    <div class="outline-row"><span class="outline-time">32:00 – 40:00</span> CPR overview + certification</div>
+    <div class="outline-row"><span class="outline-time">40:00 – 45:00</span> Quiz preview &amp; key takeaways</div>
+  </div>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Bloodborne pathogen infographic, PPE setup photo, or studio safety visual</div>
+  </div>
+
+  <h2>Bloodborne Pathogens</h2>
+
+  <p>A bloodborne pathogen is any infectious microorganism carried in human blood that can cause disease when transmitted to another person. In piercing, you work with needles, blood, and open wounds every single day. This is not theoretical — it is your daily exposure risk.</p>
+
+  <h3>The Big Three</h3>
+
+  <h4>HIV — Human Immunodeficiency Virus</h4>
+  <p>Attacks and destroys the immune system over time. Transmitted through blood, sexual fluids, and breast milk. Not airborne. Survives outside the body only minutes to hours — but that's long enough on a contaminated surface. No cure, but highly manageable with antiretrovirals. Post-exposure prophylaxis (PEP) exists and must be started within 72 hours of exposure.</p>
+
+  <h4>Hepatitis B (HBV)</h4>
+  <p>Attacks the liver and can cause cirrhosis, liver failure, and liver cancer. Far more infectious than HIV — survives on dry surfaces up to 7 days. Transmitted through blood and sexual fluids. A vaccine exists — every working piercer should be vaccinated. In an unvaccinated person, a single needlestick carries roughly a 6–30% transmission risk.</p>
+
+  <h4>Hepatitis C (HCV)</h4>
+  <p>Also liver-targeting and the leading cause of liver transplants in the US. No vaccine. Survives on surfaces up to 3 weeks in some conditions. Transmitted primarily through blood-to-blood contact. Needlesticks are the classic transmission route. Now curable with antivirals — but prevention is always the goal.</p>
+
+  <div class="img-placeholder-row">
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Pathogen comparison chart or diagram</div>
+    </div>
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">PPE setup or glove demonstration photo</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Pathogen</th><th>Surface Survival</th><th>Vaccine?</th><th>Needlestick Risk</th></tr>
+    <tr><td><strong>HIV</strong></td><td>Minutes–hours</td><td>No</td><td>~0.3%</td></tr>
+    <tr><td><strong>Hepatitis B</strong></td><td>Up to 7 days</td><td>Yes ✓</td><td>6–30%</td></tr>
+    <tr><td><strong>Hepatitis C</strong></td><td>Up to 3 weeks</td><td>No</td><td>1–3%</td></tr>
+  </table>
+
+  <h2>Standard Precautions</h2>
+
+  <div class="callout">
+    <div class="callout-label">The Rule</div>
+    Treat <strong>every client</strong> as if they are carrying a bloodborne pathogen — because you don't always know, and they may not know either.
+  </div>
+
+  <h3>Personal Protective Equipment (PPE)</h3>
+  <ul>
+    <li><strong>Gloves:</strong> Nitrile preferred. Change between every client. Change if torn mid-procedure.</li>
+    <li><strong>Eye protection:</strong> Any splash risk — surface piercings, high-vascular areas — wear it.</li>
+    <li><strong>Mask:</strong> Protects both piercer and client from respiratory transmission.</li>
+  </ul>
+
+  <h3>Needle Safety</h3>
+  <ul>
+    <li>One needle · one client · one time. No exceptions.</li>
+    <li>Never recap a needle with two hands.</li>
+    <li>Needles go directly into a puncture-resistant sharps container immediately after use.</li>
+    <li>Sharps containers are sealed when ¾ full — never overfill.</li>
+  </ul>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Sharps container placement, needle safety demo, or exposure response flowchart</div>
+  </div>
+
+  <h2>Exposure Response Protocol</h2>
+
+  <div class="callout danger">
+    <div class="callout-label">Emergency — Act Immediately</div>
+    PEP for HIV must begin within 72 hours. Sooner is always better. Seek medical attention the same day as the exposure.
+  </div>
+
+  <ol>
+    <li>Remove gloves carefully</li>
+    <li>Wash the site with soap and water for at least 15 minutes</li>
+    <li>If splash to eyes or mouth — flush with clean water for 15 minutes</li>
+    <li>Report to your employer immediately</li>
+    <li>Seek medical attention that day — PEP within 72 hours</li>
+    <li>Document everything: time, circumstances, source client info if available</li>
+    <li>Follow-up testing: baseline, 6 weeks, 3 months, 6 months</li>
+  </ol>
+
+  <h2>First Aid in the Studio</h2>
+
+  <h3>Vasovagal Syncope — Fainting (Most Common Studio Emergency)</h3>
+  <p><strong>Caused by:</strong> anxiety, pain, sight of blood, heat, hunger, dehydration.</p>
+  <p><strong>Warning signs:</strong> pale skin, sweating, nausea, lightheadedness, slowed speech.</p>
+  <p><strong>Prevention:</strong> Ask about last meal and water intake. Have clients lie down for sensitive piercings. Talk throughout the procedure.</p>
+  <p><strong>Response:</strong> Lower safely, elevate legs, cool cloth on neck, juice/sugar if conscious. If unconscious beyond 1–2 minutes: call 911.</p>
+
+  <h3>Allergic Reactions</h3>
+  <p><strong>Local:</strong> redness, itching at site — likely metal sensitivity.</p>
+  <p><strong>Anaphylaxis:</strong> spreading hives, throat tightness, difficulty breathing, BP drop — <strong>call 911 immediately.</strong></p>
+
+  <h3>Uncontrolled Bleeding</h3>
+  <p>Direct pressure with sterile gauze. Elevate. Bleeding not slowing in 10 minutes or arterial = call 911.</p>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">First aid kit, vasovagal positioning diagram, or CPR demonstration photo</div>
+  </div>
+
+  <h2>CPR</h2>
+  <p>Extreme vasovagal response can escalate. Anaphylaxis can stop a heart. A client in your chair is never far from a cardiac emergency.</p>
+  <ul>
+    <li>Check scene safety and responsiveness</li>
+    <li>Call 911 — or direct a specific person to call</li>
+    <li>30 chest compressions to 2 rescue breaths (or compression-only)</li>
+    <li>Use AED as soon as available</li>
+    <li>Continue until EMS arrives</li>
+    <li><strong>Recertify every 2 years</strong> — Red Cross or American Heart Association</li>
+  </ul>
+
+  <div class="qa-section">
+    <div class="qa-label">Discussion Questions</div>
+    <ol>
+      <li>A client tells you mid-procedure they have Hepatitis C. Do you stop, continue, or change anything about your protocol?</li>
+      <li>A needle goes through your glove and nicks your finger. Walk through your next 30 minutes.</li>
+      <li>Your client starts sweating, says they feel "weird," and their eyes go glassy. What are you doing right now?</li>
+      <li>Why should every studio employee — not just piercers — get the Hepatitis B vaccine?</li>
+      <li>How would you set up your room to minimize exposure risk before the client sits down?</li>
+    </ol>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-label">Module 1 — Quiz</div>
+    <div class="quiz-q">
+      <div class="q-text">Q1. Hepatitis B can survive on a dry surface for up to:</div>
+      <ul class="q-options">
+        <li>A) 30 minutes</li><li>B) 24 hours</li>
+        <li class="correct">C) 7 days</li><li>D) 3 weeks</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q2. PEP for HIV must begin within:</div>
+      <ul class="q-options">
+        <li>A) 24 hours</li><li>B) 48 hours</li>
+        <li class="correct">C) 72 hours</li><li>D) 1 week</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q3. Standard Precautions means:</div>
+      <ul class="q-options">
+        <li>A) Use PPE only with clients who disclose infections</li>
+        <li class="correct">B) Treat every client as a potential source of bloodborne pathogens</li>
+        <li>C) Wear gloves only during the actual piercing</li>
+        <li>D) Sanitize tools between clients</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q4. The most common emergency in a piercing studio is:</div>
+      <ul class="q-options">
+        <li>A) Anaphylaxis</li><li>B) Arterial bleed</li>
+        <li class="correct">C) Vasovagal syncope</li><li>D) Cardiac arrest</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q5. Which pathogen has no available vaccine?</div>
+      <ul class="q-options">
+        <li>A) Hepatitis A</li><li>B) Hepatitis B</li>
+        <li class="correct">C) Hepatitis C</li><li>D) HPV</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="takeaways">
+    <div class="takeaways-label">Key Takeaways — Module 1</div>
+    <ul>
+      <li>Every client, every time — Standard Precautions are not optional based on how someone looks</li>
+      <li>HBV is the most immediately dangerous pathogen in your environment — get vaccinated</li>
+      <li>A needlestick is a medical emergency. You have 72 hours. Act in the first 15 minutes.</li>
+      <li>Fainting is predictable and largely preventable — read your clients</li>
+      <li>CPR/First Aid certification is a professional baseline, not a bonus</li>
+    </ul>
+  </div>
+
+  <div class="notes-section">
+    <div class="notes-label">Notes</div>
+    <div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div>
+    <div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div>
+    <div class="notes-line"></div><div class="notes-line"></div>
+  </div>
+
+  <div class="page-footer">
+    <span>Platinum Tattoos &amp; Piercings</span>
+    <span>Module 01 — Bloodborne Pathogens &nbsp;·&nbsp; © 2026</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     MODULE 2 — ANATOMY & PHYSIOLOGY
+═══════════════════════════════════════════ -->
+<div class="page" id="module2">
+  <div class="module-header">
+    <div class="module-eyebrow">Module 02 &nbsp;·&nbsp; 55 Minutes</div>
+    <div class="module-title">Anatomy &amp; Physiology<br>for Piercers</div>
+  </div>
+
+  <div class="objectives">
+    <div class="objectives-label">Learning Objectives</div>
+    <ol>
+      <li>Describe the layers of skin and how structural differences between soft tissue and cartilage affect piercing technique and healing</li>
+      <li>Identify major blood vessels and nerve pathways relevant to common piercing sites and explain how to avoid injury</li>
+      <li>Explain the four phases of wound healing and how each phase differs across tissue types</li>
+      <li>Assess a piercing placement site for anatomical compatibility based on tissue depth, vascularity, and surface structure</li>
+      <li>Identify safe vs. high-risk placement zones for the most common piercing locations</li>
+    </ol>
+  </div>
+
+  <div class="outline">
+    <div class="outline-label">Lesson Outline</div>
+    <div class="outline-row"><span class="outline-time">0:00 – 4:00</span> Intro: Why anatomy makes or breaks a piercer</div>
+    <div class="outline-row"><span class="outline-time">4:00 – 18:00</span> Skin structure: layers, soft tissue vs. cartilage</div>
+    <div class="outline-row"><span class="outline-time">18:00 – 28:00</span> Blood vessels and nerve supply by region</div>
+    <div class="outline-row"><span class="outline-time">28:00 – 40:00</span> Wound healing phases by tissue type</div>
+    <div class="outline-row"><span class="outline-time">40:00 – 50:00</span> Safe placement sites and anatomical red flags</div>
+    <div class="outline-row"><span class="outline-time">50:00 – 55:00</span> Quiz preview &amp; key takeaways</div>
+  </div>
+
+  <h2>Skin Structure</h2>
+
+  <div class="img-placeholder-row">
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Cross-section skin layer diagram (Epidermis / Dermis / Hypodermis)</div>
+    </div>
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Soft tissue vs. cartilage comparison photo or diagram</div>
+    </div>
+  </div>
+
+  <h4>Epidermis</h4>
+  <p>Outermost layer. Avascular — no blood vessels. 5 sublayers; outermost (stratum corneum) is dead, keratinized cells. Thickness varies dramatically: eyelid ~0.5mm, palm/sole up to 4mm. Breaching it starts the wound-healing cascade.</p>
+
+  <h4>Dermis</h4>
+  <p>Contains collagen, elastin, hair follicles, sweat glands, and sebaceous glands. Blood vessels live here — this is where piercing bleeds. Nerves live here — this is where the client feels pain. Most surface and lobe piercings sit largely within or just below the dermis.</p>
+
+  <h4>Hypodermis / Subcutaneous Tissue</h4>
+  <p>Fat and connective tissue beneath the dermis. Deeper piercings (navel, some surface anchors) pass through or anchor in this layer. More fat = more tissue movement = higher migration risk in some placements.</p>
+
+  <table>
+    <tr><th></th><th>Soft Tissue</th><th>Cartilage</th></tr>
+    <tr><td><strong>Examples</strong></td><td>Lobe, navel, nipple, fleshy nostril</td><td>Helix, tragus, conch, daith, septum</td></tr>
+    <tr><td><strong>Vascularity</strong></td><td>Well-vascularized</td><td>Avascular — no direct blood supply</td></tr>
+    <tr><td><strong>Healing time</strong></td><td>3–6 months typical</td><td>6 months–2+ years</td></tr>
+    <tr><td><strong>Heals via</strong></td><td>Direct blood supply</td><td>Diffusion from surrounding tissue</td></tr>
+    <tr><td><strong>Infection risk</strong></td><td>Moderate</td><td>Higher — perichondritis can be severe</td></tr>
+  </table>
+
+  <div class="callout danger">
+    <div class="callout-label">Critical Point — Cartilage</div>
+    Cartilage relies on the perichondrium for nutrition and immune response. Infection in cartilage can lead to perichondritis, abscess, or permanent deformity. This is why cartilage infections hit harder than lobe infections.
+  </div>
+
+  <h2>Blood Vessels &amp; Nerve Supply</h2>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Ear anatomy map with all landmarks labeled / vascular diagram of ear or face</div>
+  </div>
+
+  <h3>Key Vascular Danger Zones</h3>
+  <ul>
+    <li><strong>Tongue:</strong> Lingual artery runs lateral — tongue piercings go midline only. Visible lingual vein on underside = mark carefully and avoid.</li>
+    <li><strong>Nostril:</strong> Facial artery angular branch supplies the nose — lateral placements that go too deep risk this.</li>
+    <li><strong>Ear:</strong> Superficial temporal artery anterior to tragus. Posterior auricular artery behind ear. Most ear piercings are low-risk, but placement matters.</li>
+    <li><strong>Genitals:</strong> Highly vascularized. Dorsal vein and dorsal artery of penis. Dorsal artery of clitoris runs midline — VCH must respect midline anatomy.</li>
+  </ul>
+
+  <h3>Key Nerves by Site</h3>
+  <ul>
+    <li><strong>Ear:</strong> Vagus nerve branch to the ear stimulated during tragus piercings — can trigger vasovagal response. Warn clients.</li>
+    <li><strong>Tongue:</strong> Lingual nerve runs lateral — same risk zone as lingual artery. Too lateral = risk of permanent partial tongue numbness.</li>
+    <li><strong>Nipple:</strong> 4th intercostal nerve — deep or misdirected placement can cause permanent sensory changes.</li>
+    <li><strong>Genital:</strong> Dorsal nerve of clitoris/penis — injury can cause permanent sensory loss.</li>
+  </ul>
+
+  <div class="img-placeholder-row">
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Tongue anatomy underside — lingual vein/artery marked, safe zone shown</div>
+    </div>
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Ear anatomy diagram — helix, tragus, daith, rook, conch labeled</div>
+    </div>
+  </div>
+
+  <h2>Wound Healing Phases</h2>
+
+  <h4>Phase 1 — Hemostasis (0–hours)</h4>
+  <p>Blood vessels constrict; platelets aggregate; clotting cascade activates. Initial crust and dried lymph clients see is from this phase — it is normal. Not infection. Teach this clearly or clients panic.</p>
+
+  <h4>Phase 2 — Inflammatory (Days 1–5, can extend)</h4>
+  <p>Vasodilation increases blood flow. White blood cells arrive to fight pathogens and clean debris. Signs: redness, warmth, swelling, pain — <strong>this is normal and expected.</strong> Inflammation ≠ infection. Infection = pathogen has colonized the tissue and is winning.</p>
+
+  <h4>Phase 3 — Proliferative / Granulation (Weeks–Months)</h4>
+  <p>New collagen laid down. New blood vessels form. Epithelial cells migrate — the fistula (piercing channel) forms here. Downsizing happens during this phase. Too early = trauma. Too late = lever arm causing migration.</p>
+
+  <h4>Phase 4 — Remodeling / Maturation (Months–Years)</h4>
+  <p>Type III collagen replaced by stronger Type I. Fistula matures and strengthens. Full tensile strength can take up to 2 years. "Healed" means fully remodeled — not just "not actively angry."</p>
+
+  <table>
+    <tr><th>Site</th><th>Minimum Healing</th><th>Full Remodel</th></tr>
+    <tr><td>Earlobe</td><td>3–4 months</td><td>6–12 months</td></tr>
+    <tr><td>Cartilage (helix, tragus)</td><td>6–9 months</td><td>12–24 months</td></tr>
+    <tr><td>Nostril</td><td>4–6 months</td><td>9–12 months</td></tr>
+    <tr><td>Septum</td><td>2–3 months</td><td>6 months</td></tr>
+    <tr><td>Navel</td><td>6–9 months</td><td>9–12 months</td></tr>
+    <tr><td>Nipple</td><td>6–9 months</td><td>12 months</td></tr>
+    <tr><td>Tongue</td><td>4–6 weeks</td><td>3–4 months</td></tr>
+  </table>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Wound healing phase timeline visual / normal inflammation vs early infection comparison photos</div>
+  </div>
+
+  <h2>Safe Placement &amp; Anatomical Red Flags</h2>
+
+  <h3>What to Assess Before Marking</h3>
+  <ul>
+    <li><strong>Tissue depth and pinchability:</strong> Minimum ~5–8mm for surface placements. Insufficient depth = migration.</li>
+    <li><strong>Skin surface quality:</strong> Stretch marks, scar tissue, keloid history, active skin conditions — all change the equation.</li>
+    <li><strong>Vascularity visibility:</strong> Visible veins at the proposed site = plan around them. Never pierce through visible vasculature.</li>
+    <li><strong>Movement and friction:</strong> Navel with a tight waistband, nipples without a bra during healing — chronic irritation causes complications.</li>
+  </ul>
+
+  <div class="callout danger">
+    <div class="callout-label">When to Decline</div>
+    Insufficient tissue · high vascularity at site with no safe path · active infection or lesion · keloid history in high-risk areas · anatomy that structurally prevents safe placement. <strong>Declining is professional, not personal.</strong>
+  </div>
+
+  <div class="qa-section">
+    <div class="qa-label">Discussion Questions</div>
+    <ol>
+      <li>A client wants a navel piercing but has very little defined upper lip and a flat surface. How do you handle this conversation?</li>
+      <li>You're piercing a double helix and notice a small visible vein running directly through your intended second mark. What do you do?</li>
+      <li>A client's new nostril piercing is red, slightly swollen, and has clear/white discharge at day 5. They're convinced it's infected. How do you explain what's actually happening?</li>
+      <li>Why does tongue heal faster than cartilage, and how does that affect your aftercare instructions for each?</li>
+      <li>At what point during healing would you schedule a downsize for a new helix, and why does timing matter?</li>
+    </ol>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-label">Module 2 — Quiz</div>
+    <div class="quiz-q">
+      <div class="q-text">Q1. Cartilage heals more slowly primarily because:</div>
+      <ul class="q-options">
+        <li>A) It contains more nerve endings</li>
+        <li class="correct">B) It is avascular and relies on diffusion for nutrients</li>
+        <li>C) It is denser and harder to pierce</li><li>D) It produces more scar tissue</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q2. The piercing fistula (channel) begins to form during which phase?</div>
+      <ul class="q-options">
+        <li>A) Hemostasis</li><li>B) Inflammatory</li>
+        <li class="correct">C) Proliferative</li><li>D) Remodeling</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q3. A tongue at day 4 shows swelling, redness, and white-yellowish fluid. This most likely indicates:</div>
+      <ul class="q-options">
+        <li>A) Infection requiring antibiotics</li><li>B) Allergic reaction to the jewelry</li>
+        <li class="correct">C) Normal inflammatory phase response</li><li>D) Migration beginning</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q4. Which is a major vascular danger zone for tongue piercings?</div>
+      <ul class="q-options">
+        <li>A) Sublingual gland</li>
+        <li class="correct">B) Lingual artery</li>
+        <li>C) Parotid duct</li><li>D) Inferior alveolar nerve</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q5. A client wants a navel but has minimal tissue on the upper rim and a flat surface. The correct response is:</div>
+      <ul class="q-options">
+        <li>A) Pierce at a shallower angle</li><li>B) Use a curved barbell with smaller balls</li>
+        <li class="correct">C) Decline the piercing and explain the anatomical incompatibility</li>
+        <li>D) Refer for a dermal anchor without further assessment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="takeaways">
+    <div class="takeaways-label">Key Takeaways — Module 2</div>
+    <ul>
+      <li>Cartilage is avascular — infections hit harder, healing takes longer, errors cost more</li>
+      <li>Know where the blood vessels and nerves are before you mark, not after something goes wrong</li>
+      <li>Inflammation is not infection — teach clients the difference or they'll create complications</li>
+      <li>Anatomy assesses the client's body first, the client's wishes second</li>
+      <li>Downsizing is a clinical timing decision, not a feeling</li>
+    </ul>
+  </div>
+
+  <div class="notes-section">
+    <div class="notes-label">Notes</div>
+    <div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div>
+    <div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div>
+    <div class="notes-line"></div><div class="notes-line"></div>
+  </div>
+
+  <div class="page-footer">
+    <span>Platinum Tattoos &amp; Piercings</span>
+    <span>Module 02 — Anatomy &amp; Physiology &nbsp;·&nbsp; © 2026</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     MODULE 3 — ASEPTIC TECHNIQUE
+═══════════════════════════════════════════ -->
+<div class="page" id="module3">
+  <div class="module-header">
+    <div class="module-eyebrow">Module 03 &nbsp;·&nbsp; 50 Minutes</div>
+    <div class="module-title">Aseptic Technique</div>
+  </div>
+
+  <div class="objectives">
+    <div class="objectives-label">Learning Objectives</div>
+    <ol>
+      <li>Demonstrate proper handwashing technique and explain when it is required in the piercing workflow</li>
+      <li>Select, don, and remove gloves correctly and identify when glove changes are mandatory</li>
+      <li>Describe a complete skin preparation protocol and explain the rationale for each step</li>
+      <li>Identify and eliminate cross-contamination pathways in a piercing setup</li>
+      <li>Handle and dispose of sharps safely in compliance with OSHA and local regulations</li>
+    </ol>
+  </div>
+
+  <div class="outline">
+    <div class="outline-label">Lesson Outline</div>
+    <div class="outline-row"><span class="outline-time">0:00 – 3:00</span> Intro: Aseptic technique as the cornerstone of safe piercing</div>
+    <div class="outline-row"><span class="outline-time">3:00 – 15:00</span> Handwashing: when, how, why it matters</div>
+    <div class="outline-row"><span class="outline-time">15:00 – 25:00</span> Glove use: selection, donning, doffing, change triggers</div>
+    <div class="outline-row"><span class="outline-time">25:00 – 35:00</span> Skin preparation protocols</div>
+    <div class="outline-row"><span class="outline-time">35:00 – 44:00</span> Cross-contamination prevention and setup design</div>
+    <div class="outline-row"><span class="outline-time">44:00 – 50:00</span> Sharps handling, quiz preview, key takeaways</div>
+  </div>
+
+  <div class="callout info">
+    <div class="callout-label">Core Concept</div>
+    Aseptic technique is the full collection of practices that prevent pathogenic microorganisms from reaching a wound or sterile field. You can autoclave every tool perfectly and still cause an infection if your aseptic technique breaks down between sterilization and needle entering skin.
+  </div>
+
+  <h2>Handwashing</h2>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">WHO 6-step handwashing technique poster / sink setup photo / demonstration</div>
+  </div>
+
+  <h3>When Handwashing Is Mandatory</h3>
+  <ul>
+    <li>Before entering the work area at start of shift</li>
+    <li>Before setting up any piercing tray</li>
+    <li>After touching your face, hair, phone, or clothing</li>
+    <li>Before donning gloves</li>
+    <li>After removing gloves</li>
+    <li>After handling contaminated equipment or waste</li>
+    <li>Before and after any client contact</li>
+    <li>After using the restroom, eating, drinking, or any break</li>
+  </ul>
+
+  <h3>Proper Technique — WHO 6-Step Method (minimum 20 seconds)</h3>
+  <ol>
+    <li>Wet hands with clean running water</li>
+    <li>Apply soap — enough to lather all surfaces</li>
+    <li>Rub palms together</li>
+    <li>Rub back of each hand with interlaced fingers</li>
+    <li>Interlace fingers palms together — rub between fingers</li>
+    <li>Lock fingers, rub backs of fingers against opposite palms</li>
+    <li>Rotational rub of each thumb</li>
+    <li>Rub fingertips and nails against palm of opposite hand</li>
+    <li>Rinse thoroughly under running water</li>
+    <li>Dry with single-use paper towel — use towel to turn off faucet</li>
+  </ol>
+
+  <div class="callout danger">
+    <div class="callout-label">Important</div>
+    Alcohol-based hand sanitizer is NOT effective against all pathogens (C. diff, norovirus). Soap and water is always the safer default after glove removal or when hands are visibly soiled.
+  </div>
+
+  <h2>Glove Use</h2>
+
+  <div class="img-placeholder-row">
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Proper glove donning demonstration photo</div>
+    </div>
+    <div class="img-placeholder">
+      <div class="img-icon">🖼️</div>
+      <div class="img-label">[ Add Image Here ]</div>
+      <div class="img-hint">Proper glove doffing (wrist-peel) technique — step by step</div>
+    </div>
+  </div>
+
+  <h3>Selection</h3>
+  <p><strong>Nitrile only.</strong> Latex risks allergic reactions. Vinyl is not appropriate for piercing — insufficient barrier protection. Correct fit matters: too loose = dexterity loss and gaps; too tight = tears easily.</p>
+
+  <h3>Mandatory Glove Changes</h3>
+  <ul>
+    <li>Between every client — no exceptions</li>
+    <li>If a glove tears at any point during the procedure</li>
+    <li>After touching anything outside the sterile field</li>
+    <li>After handling contaminated items before returning to a clean task</li>
+  </ul>
+
+  <h3>Doffing — The Step Most Piercers Rush</h3>
+  <ol>
+    <li>Pinch the <strong>outside</strong> of one glove at the wrist — do not touch skin</li>
+    <li>Peel off turning inside out — contamination contained</li>
+    <li>Hold removed glove in still-gloved hand</li>
+    <li>Slide two fingers of bare hand under cuff of remaining glove — inside only</li>
+    <li>Peel off second glove turning inside out, enclosing first</li>
+    <li>Dispose in biohazard waste immediately</li>
+    <li>Wash hands immediately</li>
+  </ol>
+
+  <div class="callout danger">
+    <div class="callout-label">Common Error</div>
+    Snapping gloves off at the fingertips aerosolizes surface contamination. Always peel from the wrist down.
+  </div>
+
+  <h2>Skin Preparation</h2>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Skin prep product lineup (CHG, BZK, povidone-iodine) / concentric circle technique demo</div>
+  </div>
+
+  <h3>Standard Skin Prep Protocol — In Order</h3>
+  <ol>
+    <li><strong>Examine the site.</strong> Active lesions, rashes, infections = postpone.</li>
+    <li><strong>Remove hair if necessary.</strong> Single-use disposable razor only. Never shared.</li>
+    <li><strong>Apply antiseptic:</strong>
+      <ul>
+        <li><em>CHG 2–4%:</em> Standard for most sites. Broad-spectrum, persistent. Not for mucous membranes.</li>
+        <li><em>BZK:</em> For mucous membranes (nostril interior, oral).</li>
+        <li><em>Povidone-iodine:</em> Stains; less persistent; fully remove before piercing.</li>
+      </ul>
+    </li>
+    <li><strong>Apply outward in concentric circles.</strong> Never back toward center.</li>
+    <li><strong>Allow full dry time.</strong> Rushing this is a real infection risk.</li>
+    <li><strong>Mark placement</strong> with sterile skin marker or gentian violet on sterile toothpick.</li>
+    <li><strong>Do not touch prepped site</strong> with non-sterile items. If contaminated, re-prep.</li>
+  </ol>
+
+  <h2>Cross-Contamination Prevention</h2>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Clean vs. contaminated zone tray setup — overhead photo showing proper separation</div>
+  </div>
+
+  <h3>Clean vs. Contaminated Zones</h3>
+  <ul>
+    <li><strong>Clean zone:</strong> Sterile jewelry, needles, tools. Nothing that has touched the client enters here.</li>
+    <li><strong>Contaminated zone:</strong> Used needles, removed jewelry, used gauze, used gloves.</li>
+    <li>These must be physically separated — different trays or different surfaces. Not just "different sides."</li>
+  </ul>
+
+  <h3>What Instantly Contaminates Your Clean Field</h3>
+  <ul>
+    <li>Touching your face, hair, mask, or clothing with gloved hands</li>
+    <li>Reaching across the client or the tray</li>
+    <li>Checking your phone</li>
+    <li>Picking up a dropped item from the floor</li>
+    <li>Using the same product bottle for multiple clients without barrier protection</li>
+    <li>Uncovered surfaces in the work area</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-label">Barrier Precautions</div>
+    All non-cleanable surfaces get single-use barriers before each client: arm rests, headrests, chair contact points, light handles, tray surfaces. Removed from the outside, discarded after each client. Surface underneath still gets disinfected with EPA-registered disinfectant.
+  </div>
+
+  <h2>Sharps Handling &amp; Disposal</h2>
+
+  <div class="img-placeholder">
+    <div class="img-icon">🖼️</div>
+    <div class="img-label">[ Add Image Here ]</div>
+    <div class="img-hint">Sharps container placement in room / direct disposal demonstration / container seal level marking</div>
+  </div>
+
+  <div class="callout danger">
+    <div class="callout-label">The Rule — No Exceptions</div>
+    Piercing needles are single-use. Never re-used. Never re-capped by reaching. Never set on any surface after use. Needle goes from client to sharps container in one motion.
+  </div>
+
+  <h3>Sharps Container Requirements</h3>
+  <ul>
+    <li>Puncture-resistant</li>
+    <li>Leak-proof sides and bottom</li>
+    <li>Wide enough to deposit without touching sides</li>
+    <li>Labeled with biohazard symbol</li>
+    <li>Sealed at ¾ full — never overfill</li>
+  </ul>
+
+  <h3>Disposal</h3>
+  <p>Sharps containers are regulated medical waste in every state. Use dedicated medical waste services, mail-back programs, or pharmacy/health department drop-off. Never dispose in regular trash. Track all disposal for OSHA compliance.</p>
+
+  <div class="qa-section">
+    <div class="qa-label">Discussion Questions</div>
+    <ol>
+      <li>You've donned gloves and your client sneezes — you instinctively cover your face with your gloved hand. What do you do next and why?</li>
+      <li>A client has a nostril piercing planned but there's an active pimple directly on your mark. What's your call?</li>
+      <li>Walk through your complete setup sequence from entering the room to needle in hand — identify every mandatory handwash and glove-change point.</li>
+      <li>Your sharps container is ¾ full mid-shift with three clients left. What do you do?</li>
+      <li>A newer piercer asks why they can't just use sanitizer instead of washing hands before gloving. What's your answer?</li>
+    </ol>
+  </div>
+
+  <div class="quiz-section">
+    <div class="quiz-label">Module 3 — Quiz</div>
+    <div class="quiz-q">
+      <div class="q-text">Q1. The correct first step in proper glove removal (doffing) is:</div>
+      <ul class="q-options">
+        <li>A) Pull fingers out first</li>
+        <li class="correct">B) Pinch the outside wrist of one glove</li>
+        <li>C) Remove both gloves simultaneously</li><li>D) Roll gloves down from the fingertips</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q2. Chlorhexidine gluconate (CHG) is NOT appropriate for use on:</div>
+      <ul class="q-options">
+        <li>A) Ear cartilage</li><li>B) Navel</li>
+        <li class="correct">C) Mucous membranes</li><li>D) Nipple</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q3. The clean zone in a piercing setup is defined as:</div>
+      <ul class="q-options">
+        <li>A) Any surface that has been disinfected</li>
+        <li class="correct">B) Where sterile tools and jewelry are staged, untouched by client contact</li>
+        <li>C) The piercer's side of the table</li><li>D) Any surface covered by a barrier</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q4. A sharps container should be sealed and replaced when:</div>
+      <ul class="q-options">
+        <li>A) Full</li><li>B) Half full</li>
+        <li class="correct">C) Three-quarters full</li><li>D) After every client</li>
+      </ul>
+    </div>
+    <div class="quiz-q">
+      <div class="q-text">Q5. Which of the following immediately contaminates your sterile field?</div>
+      <ul class="q-options">
+        <li>A) Speaking to the client during the procedure</li>
+        <li>B) Adjusting your hand position on the sterile tray</li>
+        <li class="correct">C) Touching your mask or face with gloved hands</li>
+        <li>D) Reaching for a capped sterile needle</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="takeaways">
+    <div class="takeaways-label">Key Takeaways — Module 3</div>
+    <ul>
+      <li>Handwashing is not optional at any mandatory step — gloves do not substitute for clean hands</li>
+      <li>Aseptic technique is a system — one break in the chain compromises the entire procedure</li>
+      <li>Clean and contaminated zones must be physically separated, not just mentally organized</li>
+      <li>Skin prep has a required dry time — rushing it is a real infection risk</li>
+      <li>Sharps go directly from client to container — no surfaces, no pauses, no exceptions</li>
+    </ul>
+  </div>
+
+  <div class="notes-section">
+    <div class="notes-label">Notes</div>
+    <div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div>
+    <div class="notes-line"></div><div class="notes-line"></div><div class="notes-line"></div>
+    <div class="notes-line"></div><div class="notes-line"></div>
+  </div>
+
+  <div class="page-footer">
+    <span>Platinum Tattoos &amp; Piercings</span>
+    <span>Module 03 — Aseptic Technique &nbsp;·&nbsp; © 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
